@@ -8,27 +8,38 @@ class HomeScreen_13 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(50.0),
-          child: Column(
-            children: [
-              const FlutterLogo(
-                size: 200,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const FlutterLogo(
+              size: 100,
+            ),
+            const SizedBox(height: 60),
+            ElevatedButton(
+              child: const SizedBox(
+                width: 100,
+                child: Center(child: Text('Sign in')),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  final route = MaterialPageRoute(
-                      builder: (context) => const SingScreen_13());
-                  Navigator.push(context, route);
-                },
-                child: const Text('Sig in'),
+              onPressed: () {
+                final route = MaterialPageRoute(
+                    builder: (context) => const SingScreen_13());
+                Navigator.push(context, route);
+              },
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                disabledBackgroundColor: Colors.grey,
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('login'),
-              )
-            ],
-          ),
+              child: const SizedBox(
+                width: 100,
+                child: Center(
+                  child: Text('Login'),
+                ),
+              ),
+              onPressed: null,
+            )
+          ],
         ),
       ),
     );
