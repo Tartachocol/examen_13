@@ -34,10 +34,14 @@ class HomeScreen_13 extends StatelessWidget {
               child: const SizedBox(
                 width: 100,
                 child: Center(
-                  child: Text('Login'),
+                  child: Text('Sing up'),
                 ),
               ),
-              onPressed: null,
+              onPressed: () {
+                final route = MaterialPageRoute(
+                    builder: (context) => const SingScreen_13());
+                Navigator.push(context, route);
+              },
             )
           ],
         ),
