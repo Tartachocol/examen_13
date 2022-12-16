@@ -1,4 +1,5 @@
 import 'package:examen_13/screen_13/screen_13.dart';
+import 'package:examen_13/screen_13/sign_up_13.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen_13 extends StatelessWidget {
@@ -39,7 +40,7 @@ class HomeScreen_13 extends StatelessWidget {
               ),
               onPressed: () {
                 final route = MaterialPageRoute(
-                    builder: (context) => const SingScreen_13());
+                    builder: (context) => const SingUpScreen_13());
                 Navigator.push(context, route);
               },
             )

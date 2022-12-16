@@ -8,8 +8,10 @@ class SingUpScreen_13 extends StatelessWidget {
   Widget build(BuildContext context) {
     final myFormKey_13 = GlobalKey<FormState>();
     final Map<String, String> formValues = {
-      'usuario': 'Usuario',
+      'Nombre': 'Usuario',
+      'Apellido': 'Apellidos',
       'password': '123456',
+      'email': 'a@gmail.com',
     };
     return Scaffold(
         body: Center(
@@ -25,9 +27,35 @@ class SingUpScreen_13 extends StatelessWidget {
                   key: myFormKey_13,
                   child: Column(children: [
                     CustomTextFormField_13(
-                      hintText: 'Usuario',
+                      hintText: 'Nombre',
                       suffixIcon: Icons.group_add_outlined,
-                      formProperty: 'usuario',
+                      formProperty: 'Nombre',
+                      formValues: formValues,
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    CustomTextFormField_13(
+                      hintText: 'Apellido',
+                      suffixIcon: Icons.group_add_outlined,
+                      formProperty: 'apellido',
+                      formValues: formValues,
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    CustomTextFormField_13(
+                      hintText: 'Email',
+                      formProperty: 'e-mail',
+                      formValues: formValues,
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    CustomTextFormField_13(
+                      hintText: 'Password',
+                      obscuereText: true,
+                      formProperty: 'password',
                       formValues: formValues,
                     ),
                     const SizedBox(
@@ -45,7 +73,7 @@ class SingUpScreen_13 extends StatelessWidget {
                     ElevatedButton(
                       child: const SizedBox(
                           width: double.maxFinite,
-                          child: Center(child: Text('Sign in'))),
+                          child: Center(child: Text('Sign Up'))),
                       onPressed: () {
                         FocusScope.of(context).requestFocus(FocusNode());
                         if (!myFormKey_13.currentState!.validate()) {
