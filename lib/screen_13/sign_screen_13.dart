@@ -15,7 +15,7 @@ class SingScreen_13 extends StatelessWidget {
     return Scaffold(
         body: Center(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               children: [
                 const FlutterLogo(

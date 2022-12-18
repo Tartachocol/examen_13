@@ -59,7 +59,6 @@ class SingUpScreen_13 extends StatelessWidget {
                       obscuereText: true,
                       formProperty: 'password',
                       formValues: formValues,
-                      keyboardType: TextInputType.visiblePassword,
                     ),
                     const SizedBox(
                       height: 20,

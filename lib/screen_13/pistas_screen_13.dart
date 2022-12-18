@@ -21,7 +21,7 @@ class PiastasScreen_13 extends StatelessWidget {
         children: const [
           CustomCard_13(
             imageUrl: 'https://allforpadel.com/img/cms/pistas/fx2-1.jpg',
-            nombre: 'Pista de pádell',
+            nombre: 'Pista de pádel',
           ),
           CustomCard_13(
             imageUrl:

@@ -30,9 +30,6 @@ class HomeScreen_13 extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  disabledBackgroundColor: Colors.grey,
-                ),
                 child: const SizedBox(
                   width: 100,
                   child: Center(
