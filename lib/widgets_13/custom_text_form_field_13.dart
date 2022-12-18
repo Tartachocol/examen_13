@@ -4,7 +4,6 @@ class CustomTextFormField_13 extends StatelessWidget {
   final String? hintText;
   final String? labelText;
   final String? helperText;
-  final IconData? icon;
   final IconData? suffixIcon;
   final TextInputType? keyboardType;
   final bool obscuereText;
@@ -16,7 +15,6 @@ class CustomTextFormField_13 extends StatelessWidget {
     this.hintText,
     this.labelText,
     this.helperText,
-    this.icon,
     this.suffixIcon,
     this.keyboardType,
     this.obscuereText = false,
@@ -45,7 +43,6 @@ class CustomTextFormField_13 extends StatelessWidget {
         hintText: hintText,
         labelText: labelText,
         helperText: helperText,
-        icon: Icon(icon),
         suffixIcon: Icon(suffixIcon),
       ),
     );

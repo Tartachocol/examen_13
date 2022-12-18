@@ -11,6 +11,13 @@ class ListViewScreen_13 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Fluter App'),
+        automaticallyImplyLeading: false,
+        actions: const [
+          CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://as01.epimg.net/meristation/imagenes/2013/09/17/noticia/1379397600_125748_1532601596_portada_normal.jpg'),
+          )
+        ],
       ),
       body: ListView.separated(
         itemBuilder: (context, index) => ListTile(

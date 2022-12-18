@@ -7,7 +7,15 @@ class PiastasScreen_13 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Card Widget')),
+      appBar: AppBar(
+        title: const Text('Card Widget'),
+        actions: const [
+          CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://as01.epimg.net/meristation/imagenes/2013/09/17/noticia/1379397600_125748_1532601596_portada_normal.jpg'),
+          )
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: const [
@@ -24,7 +32,7 @@ class PiastasScreen_13 extends StatelessWidget {
             imageUrl:
                 'https://grupopineda.eu/wp-content/uploads/2020/04/shutterstock_1832966869.jpg',
             nombre: 'Pista de baloncesto',
-          )
+          ),
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:examen_13/screen_13/screen_13.dart';
+import 'package:examen_13/widgets_13/widgets_13.dart';
 import 'package:flutter/material.dart';
 
 class SingScreen_13 extends StatelessWidget {
@@ -13,7 +14,7 @@ class SingScreen_13 extends StatelessWidget {
     };
     return Scaffold(
         body: Center(
-          child: Padding(
+          child: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
             child: Column(
               children: [

@@ -1,4 +1,5 @@
 import 'package:examen_13/screen_13/screen_13.dart';
+import 'package:examen_13/widgets_13/widgets_13.dart';
 import 'package:flutter/material.dart';
 
 class SingUpScreen_13 extends StatelessWidget {
@@ -15,14 +16,14 @@ class SingUpScreen_13 extends StatelessWidget {
     };
     return Scaffold(
         body: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             child: Column(
               children: [
                 const FlutterLogo(
                   size: 100,
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 20),
                 Form(
                   key: myFormKey_13,
                   child: Column(children: [
@@ -42,15 +43,26 @@ class SingUpScreen_13 extends StatelessWidget {
                       formValues: formValues,
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
                     CustomTextFormField_13(
                       hintText: 'Email',
                       formProperty: 'e-mail',
                       formValues: formValues,
+                      keyboardType: TextInputType.emailAddress,
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 20,
+                    ),
+                    CustomTextFormField_13(
+                      hintText: 'Password',
+                      obscuereText: true,
+                      formProperty: 'password',
+                      formValues: formValues,
+                      keyboardType: TextInputType.visiblePassword,
+                    ),
+                    const SizedBox(
+                      height: 20,
                     ),
                     CustomTextFormField_13(
                       hintText: 'Password',
@@ -59,16 +71,7 @@ class SingUpScreen_13 extends StatelessWidget {
                       formValues: formValues,
                     ),
                     const SizedBox(
-                      height: 30,
-                    ),
-                    CustomTextFormField_13(
-                      hintText: 'Password',
-                      obscuereText: true,
-                      formProperty: 'password',
-                      formValues: formValues,
-                    ),
-                    const SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
                     ElevatedButton(
                       child: const SizedBox(
