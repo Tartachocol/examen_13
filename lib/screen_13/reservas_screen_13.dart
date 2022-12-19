@@ -38,7 +38,12 @@ class _ReservasScreen_13State extends State<ReservasScreen_13> {
     DateTime _focusedDay = DateTime.now();
     bool pulsado = false;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text('Reservas'), actions: const [
+        CircleAvatar(
+          backgroundImage: NetworkImage(
+              'https://as01.epimg.net/meristation/imagenes/2013/09/17/noticia/1379397600_125748_1532601596_portada_normal.jpg'),
+        ),
+      ]),
       body: Center(
         child: ListView(
           children: [
@@ -94,7 +99,9 @@ class _ReservasScreen_13State extends State<ReservasScreen_13> {
                     Text('duracion : 1h 30 min'),
                   ],
                 ),
-                Container(child: muestraBoton(pulsado)),
+                Container(
+                    margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                    child: muestraBoton(pulsado)),
               ]),
             ),
           ],
