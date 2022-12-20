@@ -12,13 +12,16 @@ class ReservasScreen_13 extends StatefulWidget {
 class _ReservasScreen_13State extends State<ReservasScreen_13> {
   @override
   Widget build(BuildContext context) {
+    bool pulsado = false;
     ElevatedButton muestraBoton(pulsado) {
       if (pulsado) {
         return ElevatedButton(
           style: ElevatedButton.styleFrom(primary: Colors.grey),
           child: const Text('Cancelar'),
           onPressed: () {
-            pulsado = false;
+            setState(() {
+              pulsado = !pulsado;
+            });
             print(pulsado);
           },
         );
@@ -26,7 +29,9 @@ class _ReservasScreen_13State extends State<ReservasScreen_13> {
         return ElevatedButton(
           child: const Text('Reservar'),
           onPressed: () {
-            pulsado = true;
+            setState(() {
+              pulsado = !pulsado;
+            });
             print(pulsado);
           },
         );
@@ -34,9 +39,13 @@ class _ReservasScreen_13State extends State<ReservasScreen_13> {
     }
 
     DateTime _selectedDay = DateTime.now();
+    DateTime today = DateTime.now();
+    void _onDaySelected(DateTime day, DateTime focusedDay) {
+      setState(() {
+        today = day;
+      });
+    }
 
-    DateTime _focusedDay = DateTime.now();
-    bool pulsado = false;
     return Scaffold(
       appBar: AppBar(title: const Text('Reservas'), actions: const [
         CircleAvatar(
@@ -57,14 +66,10 @@ class _ReservasScreen_13State extends State<ReservasScreen_13> {
                   calendarFormat: CalendarFormat.week,
                   firstDay: DateTime.now(),
                   lastDay: DateTime.utc(2030, 3, 14),
-                  focusedDay: _focusedDay,
-                  selectedDayPredicate: (day) => _selectedDay == day,
-                  onDaySelected: (selectedDay, focusedDay) {
-                    setState(() {
-                      _selectedDay = selectedDay;
-                      _focusedDay = focusedDay;
-                    });
-                  },
+                  focusedDay: today,
+                  availableGestures: AvailableGestures.all,
+                  selectedDayPredicate: (day) => isSameDay(day, today),
+                  onDaySelected: _onDaySelected,
                 ),
               ]),
             ),
@@ -96,12 +101,37 @@ class _ReservasScreen_13State extends State<ReservasScreen_13> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: const [
                     Icon(Icons.access_time_rounded),
-                    Text('duracion : 1h 30 min'),
+                    Text(
+                      'duracion: 1h 30 min',
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: const [
+                    Icon(Icons.group_add_outlined),
+                    Text(
+                      softWrap: true,
+                      textAlign: TextAlign.center,
+                      'Jose Manuel',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
                   ],
                 ),
                 Container(
                     margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                     child: muestraBoton(pulsado)),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Colors.grey),
+                  child: const Text('Cancelar'),
+                  onPressed: () {
+                    setState(() {
+                      pulsado = !pulsado;
+                    });
+                    print(pulsado);
+                  },
+                ),
               ]),
             ),
           ],

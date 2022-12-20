@@ -8,6 +8,7 @@ class SingUpScreen_13 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final myFormKey_13 = GlobalKey<FormState>();
+
     final Map<String, String> formValues = {
       'Nombre': 'Usuario',
       'Apellido': 'Apellidos',
@@ -64,7 +65,7 @@ class SingUpScreen_13 extends StatelessWidget {
                       height: 20,
                     ),
                     CustomTextFormField_13(
-                      hintText: 'Password',
+                      hintText: 'Confirrmar Password',
                       obscuereText: true,
                       formProperty: 'password',
                       formValues: formValues,
